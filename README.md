@@ -1,13 +1,13 @@
 # Perpustakan - ERD
 
-This project was made by Muhammad Davinda Rinaldy in Training Program held by Kodacademy to make a ERD of library using mermaid tool.
+This project was made by Muhammad Davinda Rinaldy in Training Program held by Kodacademy to make ERD of a library, using mermaid tool.
 
 ## Entity Relationship Diagram (ERD)
 
 ```mermaid
 erDiagram
     direction LR
-    BUKU {
+    buku {
         string id_buku PK
         string judul
         int halaman
@@ -21,26 +21,26 @@ erDiagram
         string id_kategori FK
         string id_rak_buku FK
     }
-    KATEGORI {
+    kategori {
         string id_kategori PK
         string nama
     }
-    RAK_BUKU {
+    rak_buku {
         string id_rak_buku PK
         int kapasitas
         string no_rak
     }
-    PETUGAS {
+    petugas {
         string id_petugas PK
         string nama
     }
-    PEMINJAM {
+    peminjam {
         string id_peminjam PK
         string nama
         string alamat
         string no_hp
     }
-    TRANSAKSI {
+    transaksi {
         string id_transaksi PK
         string id_buku FK
         string id_peminjam FK
@@ -48,9 +48,9 @@ erDiagram
         date deadline
         bool dikembalikan
     }
-    KATEGORI ||--o{ BUKU: dimiliki
-    RAK_BUKU }o--|| BUKU: menyimpan
-    BUKU ||--o{ PETUGAS: dikelola
-    BUKU ||--o{ TRANSAKSI: memiliki
-    PEMINJAM ||--o{ TRANSAKSI: melakukan
+    kategori ||--o{ buku: dimiliki
+    rak_buku }o--|| buku: menyimpan
+    buku ||--o{ petugas: dikelola
+    buku ||--o{ transaksi: memiliki
+    peminjam ||--o{ transaksi: melakukan
 ```
